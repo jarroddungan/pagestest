@@ -10,8 +10,18 @@
 		<header>
 			<h1><a href="/">Jekyll Base</a></h1>
 		</header>
+		<nav>
+			<ul>
+				{% for page in site.pages %}
+
+				<span>{{ page.date }}</span> <a href="{{ page.url }}">{{ page.title }}</a>
+
+				{% endfor %}
+
+			</ul>
+		</nav>
 		<section>
-			{{ content }}
+			{{ content | markdownify }}
 		</section>
 	</body>
 </html>
